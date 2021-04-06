@@ -262,4 +262,13 @@ Try a bunch of these cool priveleges, see what they all do.
 
 
 
+## How to compile from Linux without GUI? I did it on VDS (work and on VPS)
+
+Lucky tools pack:
+* Debian 9 x86_x64
+* 
+etc.
+
+
+
 
