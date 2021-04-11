@@ -272,8 +272,8 @@ Try a bunch of these cool priveleges, see what they all do.
 
 Я мог что-то забыть, но надеюсь ничего не забыл)
 
-1) Первым делом пишем в терминале: ```apt install openjdk-11-jdk-headless adb
-2) Так как у нас условно говоря чистая машина, то ставим туда ```git: apt install git
+1) Первым делом пишем в терминале: `apt install openjdk-11-jdk-headless adb`
+2) Так как у нас условно говоря чистая машина, то ставим туда `git: apt install git`
 
 
 
