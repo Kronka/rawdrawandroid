@@ -270,7 +270,8 @@ Try a bunch of these cool priveleges, see what they all do.
 * Debian 9 x86_x64
 * прямые руки..
 
-Я мог что-то забыть, но надеюсь ничего не забыл)
+Я мог что-то забыть, но надеюсь ничего не забыл, и установка идёт не совсем по порядку, но всё необходимое тут есть.
+Имейте ввиду, некоторые ссылки могут быть не актуальны.
 
 1) Первым делом пишем в терминале: `apt install openjdk-11-jdk-headless adb`
 2) Так как у нас условно говоря чистая машина, то ставим туда git: `apt install git`
@@ -278,6 +279,17 @@ Try a bunch of these cool priveleges, see what they all do.
 4) Дальше мы ставим Make (нам же надо как-то собрать весь проект): `apt install make`
 5) Создаём ключ (он нужен для подписания APK): `make keystore`
 6) Дальше ставим zip (нужен будет для распаковки): `apt install zip` 
-7) Ставим android-sdk (т.к. у нас нет экрана, а только терминал и мы не можем использовать Android Studio, то ставим инструмент от студии - Android-sdk): `apt update && sudo apt install android-sdk`
-8) 
-
+7) Ставим android-sdk (т.к. у нас нет экрана, а только терминал и мы не можем использовать Android Studio, то ставим инструмент от студии - Android-sdk): 
+`apt update && sudo apt install android-sdk`
+8) Дальше нам нужно прописать экспорты, найти нужный файл можно в: /root/.bashrc (тут можно воспользоваться FileZilla или nano)
+`export BUILD_TOOLS=/usr/lib/android-sdk/build-tools/debian`
+`export NDK=/home/android-ndk-r22b`
+9) Теперь качаем android-ndk (я использовал r22b, чем новее версия NDK, тем выше поддержка Android, в этом случае значит поддерживается 11 андройд):
+`wget https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip`
+10) Распакуем в папку android-ndk-r22b: `unzip android-ndk-r22b-linux-x86_64.zip -d /android-ndk-r22b`
+11) Дальше мы качаем commandtools (нужное дополнение для Android-sdk, это от Android Studio): 
+`wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip`
+12) Распакуем его: `unzip commandlinetools.zip -d /home/cmdlinetools`
+13) Перемещаем папку в android-sdk: `mv /home/cmdline-tools /usr/lib/android-sdk`
+14) Так как нам нужно чем-то подписывать APK, то ставим apksigner: `apt install apksigner`
+15) 
