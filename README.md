@@ -316,4 +316,11 @@ Try a bunch of these cool priveleges, see what they all do.
 `$(AAPT) package -f -F temp.apk -I` **/usr/lib/android-sdk**`/platforms/android-$(ANDROIDVERSION)/android.jar -M AndroidManifest.xml -S Sources/res -A makecapk/assets -v --target-sdk-version $(ANDROIDTARGET)`
 18) В строке: `$(BUILD_TOOLS)/apksigner sign --key-pass pass:$(STOREPASS) --ks-pass pass:$(STOREPASS) --ks $(KEYSTOREFILE) $(APKFILE)`  
 Удаляем: `$(BUILD_TOOLS)/`
-19) 
+19) Кстати, после распаковки android-ndk, архив можно удалить!
+20) Теперь возвращаемся в папку где у нас расположен репозиторий, у меня это в папке рут, например:  
+`cd /root/rawdrawandroid`
+21) Собираем проект: `make push`  
+  
+В результате у нас в папке rawdrawandroid должен появится **cnfgtest.apk** его перекидываем на телефон, устанавливаем, радуемся.  
+На 11 андройде пока что данный репозиторий не работает (графическая проблема), но ниже 11 андройда - работает.  
+Помните, что репозиторий является сырым, проблемы и баги никто не исключал.
