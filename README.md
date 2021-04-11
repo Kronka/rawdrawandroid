@@ -264,15 +264,17 @@ Try a bunch of these cool priveleges, see what they all do.
 
 ## How to compile from Linux without GUI? I did it on VDS (work and on VPS)
 ## Как скомпилировать из Linux без GUI? Я сделал на VDS (работает и на VPS)
-
-Мне лень расписывать это на английском яызке, поэтому распишу на русском,
-нам нужно:
+  
+Мне лень расписывать это на английском яызке, поэтому распишу на русском,  
+нам нужно:  
 * Debian 9 x86_x64
-* прямые руки..
-
-Я мог что-то забыть, но надеюсь ничего не забыл, и установка идёт не совсем по порядку, но всё необходимое тут есть.
-Имейте ввиду, некоторые ссылки могут быть не актуальны.
-
+* прямые руки..  
+  
+Я мог что-то забыть, но надеюсь ничего не забыл, и установка идёт не совсем по порядку, но всё необходимое тут есть.  
+Здесь расписано для очень мало опытных пользователей Linux, ну хотя бы с минимум знаний cd / reboot / mv / rf и т.п.  
+Имейте ввиду, некоторые ссылки могут быть не актуальны.  
+Также стоит помнить, иногда придётся перемещаться с помощью команды cd по папкам  
+  
 1) Первым делом пишем в терминале:  
 `apt install openjdk-11-jdk-headless adb`
 3) Так как у нас условно говоря чистая машина, то ставим туда git:  
@@ -312,3 +314,6 @@ Try a bunch of these cool priveleges, see what they all do.
 `$(AAPT) package -f -F temp.apk -I $(ANDROIDSDK)/platforms/android-$(ANDROIDVERSION)/android.jar -M AndroidManifest.xml -S Sources/res -A makecapk/assets -v --target-sdk-version $(ANDROIDTARGET)`  
 В этой строке изменяем так:  
 `$(AAPT) package -f -F temp.apk -I` **/usr/lib/android-sdk**`/platforms/android-$(ANDROIDVERSION)/android.jar -M AndroidManifest.xml -S Sources/res -A makecapk/assets -v --target-sdk-version $(ANDROIDTARGET)`
+18) В строке: `$(BUILD_TOOLS)/apksigner sign --key-pass pass:$(STOREPASS) --ks-pass pass:$(STOREPASS) --ks $(KEYSTOREFILE) $(APKFILE)`  
+Удаляем: `$(BUILD_TOOLS)/`
+19) 
