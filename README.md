@@ -263,11 +263,17 @@ Try a bunch of these cool priveleges, see what they all do.
 
 
 ## How to compile from Linux without GUI? I did it on VDS (work and on VPS)
+## Как скомпилировать из Linux без GUI? Я сделал на VDS (работает и на VPS)
 
-Lucky tools pack:
+Мне лень расписывать это на английском яызке, поэтому распишу на русском,
+нам нужно:
 * Debian 9 x86_x64
-* 
-etc.
+* прямые руки..
+
+Я мог что-то забыть, но надеюсь ничего не забыл)
+
+1) Первым делом пишем в терминале: ```apt install openjdk-11-jdk-headless adb
+2) Так как у нас условно говоря чистая машина, то ставим туда ```git: apt install git
 
 
 
