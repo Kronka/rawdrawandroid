@@ -275,7 +275,8 @@ Try a bunch of these cool priveleges, see what they all do.
 
 1) Первым делом пишем в терминале: `apt install openjdk-11-jdk-headless adb`
 2) Так как у нас условно говоря чистая машина, то ставим туда git: `apt install git`
-3) Копируем репозиторий к себе (прежде чем копировать, перейдите в нужную вам папку, у меня это /root/): `git clone https://github.com/cnlohr/rawdrawandroid --recurse-submodules`
+3) Копируем репозиторий к себе (прежде чем копировать, перейдите в нужную вам папку, у меня это /root/):  
+`git clone https://github.com/cnlohr/rawdrawandroid --recurse-submodules`
 4) Дальше мы ставим Make (нам же надо как-то собрать весь проект): `apt install make`
 5) Создаём ключ (он нужен для подписания APK): `make keystore`
 6) Дальше ставим zip (нужен будет для распаковки): `apt install zip` 
