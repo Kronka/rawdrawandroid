@@ -292,4 +292,11 @@ Try a bunch of these cool priveleges, see what they all do.
 12) Распакуем его: `unzip commandlinetools.zip -d /home/cmdlinetools`
 13) Перемещаем папку в android-sdk: `mv /home/cmdline-tools /usr/lib/android-sdk`
 14) Так как нам нужно чем-то подписывать APK, то ставим apksigner: `apt install apksigner`
-15) 
+15) Дальше пригодится набор инструментов (или нет, я не помню :D): `apt install build-essential`
+16) Для того чтобы собрать проект под 30 версию SDK, нужна папка Android-30 которая в итоге должна находится по пути: /usr/lib/android-sdk/platforms/android-30
+Но, мне никак пока не удавалось использовать sdkmanager чтобы получить всё необходимое для этого, поэтому я пошёл другим путём, я скинул со своего ПК на VDS эту самую папку.
+И это работает. Нашёл я её по пути: `C:\Users\USER\AppData\Local\Android\Sdk\platforms\android-30`
+17) Дальше нужно немного отредактировать Makefile в корне проекта, находим такую строку:
+`$(AAPT) package -f -F temp.apk -I $(ANDROIDSDK)/platforms/android-$(ANDROIDVERSION)/android.jar -M AndroidManifest.xml -S Sources/res -A makecapk/assets -v --target-sdk-version $(ANDROIDTARGET)`
+В этой строке изменяем так:
+`$(AAPT) package -f -F temp.apk -I */usr/lib/android-sdk/*platforms/android-$(ANDROIDVERSION)/android.jar -M AndroidManifest.xml -S Sources/res -A makecapk/assets -v --target-sdk-version $(ANDROIDTARGET)`
