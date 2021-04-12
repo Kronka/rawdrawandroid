@@ -280,7 +280,7 @@ Try a bunch of these cool priveleges, see what they all do.
 3) Так как у нас условно говоря чистая машина, то ставим туда git:  
 `apt install git`
 4) Копируем репозиторий к себе (прежде чем копировать, перейдите в нужную вам папку, у меня это /root/):  
-`git clone https://github.com/cnlohr/rawdrawandroid --recurse-submodules`
+`git clone https://github.com/cnlohr/rawdrawandroid --recurse-submodules`  
 Я возился с 11 версией андройд, оказывается стоит удалить папку rawdraw, и скачать заново с репозитория (иначе будет синий экран и всё):  
 `git clone https://github.com/cntools/rawdraw/ --recurse-submodules`
 4) Дальше мы ставим Make (нам же надо как-то собрать весь проект):  
